@@ -41,14 +41,14 @@
     "karma-sauce-launcher": "1.2.0",
     "local-web-server": "2.3.0",
     "markdown": "^0.5.0",
-    "pdfjs-dist": "2.0.91",
+    "pdfjs-dist": "2.0.292",
     "rollup": "0.50.0",
     "rollup-plugin-babel": "3.0.3",
     "uglify-js": "3.3.5"
   },
   "scripts": {
-    "start": "ws",
-    "build": "npm install && node build.js",
+    "start": "node init && ws",
+    "build": "node init && npm install && node build.js",
     "version": "npm run build && git add -A dist",
     "test": "./node_modules/.bin/karma start saucelabs.karma.conf.js --single-run && for a in coverage/*; do codeclimate-test-reporter < \"$a/lcov.info\"; break; done",
     "test-local": "node tests/utils/reference-server.js & karma start",
